@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DemoLibrary.Utilities
 {
-    public class Logger
+    public class Logger : ILogger
     {
-        public void Log(string v)
+        public void Log(string message)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Logging {message}");
         }
     }
 }

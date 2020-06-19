@@ -6,16 +6,24 @@ using System.Threading.Tasks;
 
 namespace DemoLibrary.Utilities
 {
-    public class DataAccess
+    public class DataAccess : IDataAccess
     {
-        internal void LoadData()
+        private ILogger _logger;
+
+        public DataAccess(ILogger logger)
         {
-            throw new NotImplementedException();
+            _logger = logger;
+        }
+        public void LoadData()
+        {
+            Console.WriteLine("Loading data...");
+            _logger.Log("Loading data...");
         }
 
-        internal void SaveData(string v)
+        public void SaveData(string name)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Saving {name}");
+            _logger.Log("Saving data...");
         }
     }
 }
